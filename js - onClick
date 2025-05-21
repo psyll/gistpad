@@ -1,0 +1,5 @@
+$(document).on("click", "#account", function (event) {
+    $(this).toggleClass('active');
+	$("#header-aside").toggleClass('active');
+
+});
