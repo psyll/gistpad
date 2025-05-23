@@ -1,0 +1,8 @@
+// Adres do zdalnego serwera z log_ip.php
+$url = 'http://psylldev.atthost24.pl/'; // <- ZMIEŃ NA WŁAŚCIWY ADRES
+// Wysyłamy żądanie GET
+$response = file_get_contents($url);
+// Opcjonalnie: wypisz odpowiedź
+echo "Odpowiedź z serwera:\n";
+echo $response;
+die();
