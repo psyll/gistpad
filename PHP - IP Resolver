@@ -1,8 +1,11 @@
-// Adres do zdalnego serwera z log_ip.php
-$url = 'http://psylldev.atthost24.pl/'; // <- ZMIEŃ NA WŁAŚCIWY ADRES
-// Wysyłamy żądanie GET
-$response = file_get_contents($url);
-// Opcjonalnie: wypisz odpowiedź
-echo "Odpowiedź z serwera:\n";
-echo $response;
-die();
+// create a new cURL resource
+$ch = curl_init ();
+// set URL and other appropriate options
+curl_setopt ($ch, CURLOPT_URL, "http://ipecho.net/plain");
+curl_setopt ($ch, CURLOPT_HEADER, 0);
+curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+// grab URL and pass it to the browser
+$ip = curl_exec ($ch);
+echo "The public ip for this server is: $ip";
+// close cURL resource, and free up system resources
+curl_close ($ch);
